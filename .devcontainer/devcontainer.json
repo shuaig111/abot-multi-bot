@@ -1,0 +1,20 @@
+{
+  "name": "ABot 多 Bot 协作空间",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": {
+      "label": "ABot 应用预览",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postCreateCommand": "nohup python3 -m http.server 8080 --directory assets > /tmp/abot-http.log 2>&1 &",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ritwickdey.LiveServer",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
